@@ -786,6 +786,10 @@ TDStretch * TDStretch::newInstance()
 
 
 #ifdef SOUNDTOUCH_ALLOW_SSE
+    #if SOUNDTOUCH_SSE2NEON
+        return ::new TDStretchSSE;
+    #endif
+
     if (uExtensions & SUPPORT_SSE)
     {
         // SSE support

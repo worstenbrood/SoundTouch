@@ -187,4 +187,9 @@ namespace soundtouch
 // quality compromise.
 //#define SOUNDTOUCH_PREVENT_CLICK_AT_RATE_CROSSOVER   1
 
+#ifdef SOUNDTOUCH_SSE2NEON
+    #include <sse2neon.h>
+    #define SOUNDTOUCH_ALLOW_SSE 1
+#endif
+
 #endif
