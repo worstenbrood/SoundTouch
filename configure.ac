@@ -17,7 +17,7 @@ dnl Place - Suite 330, Boston, MA  02111-1307, USA
 
 AC_INIT([SoundTouch],[2.3.2],[http://www.surina.net/soundtouch])
 dnl Default to libSoundTouch.so.$LIB_SONAME.0.0
-LIB_SONAME=1
+LIB_SONAME=2
 AC_SUBST(LIB_SONAME)
 
 AC_CONFIG_AUX_DIR(config)
