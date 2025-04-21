@@ -51,11 +51,11 @@ using namespace soundtouch;
 
 #ifdef SOUNDTOUCH_ALLOW_NEON
 
-// SSE routines available only with float sample type
+// NEON routines available only with float sample type
 
 //////////////////////////////////////////////////////////////////////////////
 //
-// implementation of SSE optimized functions of class 'TDStretchSSE'
+// implementation of NEON optimized functions of class 'TDStretchNEON'
 //
 //////////////////////////////////////////////////////////////////////////////
 
