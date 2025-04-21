@@ -74,6 +74,7 @@
     <PlatformToolset>v143</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -267,6 +268,10 @@ copy $(OutDir)$(TargetName)$(TargetExt) ..\..\lib</Command>
       <XMLDocumentationFileName>$(IntDir)</XMLDocumentationFileName>
       <BrowseInformationFile>$(IntDir)</BrowseInformationFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OpenMPSupport>
+      </OpenMPSupport>
+      <UseStandardPreprocessor>true</UseStandardPreprocessor>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -544,6 +549,7 @@ copy $(OutDir)$(TargetName)$(TargetExt) ..\..\lib</Command>
     <ClCompile Include="InterpolateLinear.cpp" />
     <ClCompile Include="InterpolateShannon.cpp" />
     <ClCompile Include="mmx_optimized.cpp" />
+    <ClCompile Include="neon_optimized.cpp" />
     <ClCompile Include="PeakFinder.cpp" />
     <ClCompile Include="RateTransposer.cpp">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -615,6 +621,7 @@ copy $(OutDir)$(TargetName)$(TargetExt) ..\..\lib</Command>
     <ClInclude Include="InterpolateShannon.h" />
     <ClInclude Include="PeakFinder.h" />
     <ClInclude Include="RateTransposer.h" />
+    <ClInclude Include="SSE2NEON.h" />
     <ClInclude Include="TDStretch.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

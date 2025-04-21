@@ -308,6 +308,15 @@ FIRFilter * FIRFilter::newInstance()
     else
 #endif // SOUNDTOUCH_ALLOW_SSE
 
+#ifdef SOUNDTOUCH_ALLOW_NEON
+    if (true)
+    {
+        // NEON support
+        return ::new FIRFilterNEON;
+    }
+    else
+#endif // SOUNDTOUCH_ALLOW_SSE
+
     {
         // ISA optimizations not supported, use plain C version
         return ::new FIRFilter;

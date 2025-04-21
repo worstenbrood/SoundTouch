@@ -43,6 +43,7 @@
 #define SUPPORT_ALTIVEC     0x0004
 #define SUPPORT_SSE         0x0008
 #define SUPPORT_SSE2        0x0010
+#define SUPPORT_NEON        0x0020
 
 /// Checks which instruction set extensions are supported by the CPU.
 ///

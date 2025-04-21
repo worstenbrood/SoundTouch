@@ -776,6 +776,15 @@ TDStretch * TDStretch::newInstance()
     else
 #endif // SOUNDTOUCH_ALLOW_SSE
 
+#ifdef SOUNDTOUCH_ALLOW_NEON
+        if (uExtensions & SUPPORT_NEON)
+        {
+            // NEON support
+            return ::new TDStretchNEON;
+        }
+        else
+#endif // SOUNDTOUCH_ALLOW_SSE
+
     {
         // ISA optimizations not supported, use plain C version
         return ::new TDStretch;

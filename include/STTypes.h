@@ -122,6 +122,10 @@ namespace soundtouch
 
     #endif
 
+#if _M_ARM64
+    #define SOUNDTOUCH_ALLOW_NEON 1
+#endif
+
     // If defined, allows the SIMD-optimized routines to skip unevenly aligned
     // memory offsets that can cause performance penalty in some SIMD implementations.
     // Causes slight compromise in sound quality.

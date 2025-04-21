@@ -275,5 +275,16 @@ public:
 
 #endif /// SOUNDTOUCH_ALLOW_SSE
 
+#ifdef SOUNDTOUCH_ALLOW_NEON
+    /// Class that implements SSE optimized routines for floating point samples type.
+    class TDStretchNEON : public TDStretch
+    {
+    protected:
+        double calcCrossCorr(const float* mixingPos, const float* compare, double& norm) override;
+        double calcCrossCorrAccumulate(const float* mixingPos, const float* compare, double& norm) override;
+    };
+
+#endif /// SOUNDTOUCH_ALLOW_NEON
+
 }
 #endif  /// TDStretch_H

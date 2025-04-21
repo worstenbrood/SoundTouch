@@ -135,6 +135,24 @@ public:
 
 #endif // SOUNDTOUCH_ALLOW_SSE
 
+#ifdef SOUNDTOUCH_ALLOW_NEON
+    /// Class that implements SSE optimized functions exclusive for floating point samples type.
+    class FIRFilterNEON : public FIRFilter
+    {
+    protected:
+        float* filterCoeffsUnalign;
+        float* filterCoeffsAlign;
+
+        virtual uint evaluateFilterStereo(float* dest, const float* src, uint numSamples) const override;
+    public:
+        FIRFilterNEON();
+        ~FIRFilterNEON();
+
+        virtual void setCoefficients(const float* coeffs, uint newLength, uint uResultDivFactor) override;
+    };
+
+#endif // SOUNDTOUCH_ALLOW_NEON
+
 }
 
 #endif  // FIRFilter_H
