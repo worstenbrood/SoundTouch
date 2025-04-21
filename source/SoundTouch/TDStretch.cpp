@@ -777,7 +777,7 @@ TDStretch * TDStretch::newInstance()
 #endif // SOUNDTOUCH_ALLOW_SSE
 
 #ifdef SOUNDTOUCH_ALLOW_NEON
-        if (uExtensions & SUPPORT_NEON)
+        if (true)
         {
             // NEON support
             return ::new TDStretchNEON;
